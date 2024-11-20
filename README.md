@@ -1,7 +1,7 @@
 # About
 This demonstrates a bug (or perhaps simply odd behavior) in [HotChocolate](https://chillicream.com/docs/hotchocolate/v14) 14.1.0 when adding codes to errors using error filters.
 
-Given that the `IError` type has a `Code` property, and it is not uncommon for errors to have both a message and a code, I would expect calling the `.WithCode("SOME_ERROR_CODE")` extension method would, at a minimum, cause a `code` field to be present in the returned JSON response.
+Given that the `IError` type has a `Code` property, and it is not uncommon for errors to have both a message and a code, I would expect calling the `.WithCode("CUSTOM_ERROR_CODE")` extension method would, at a minimum, cause a `code` field to be present in the returned JSON response.
 
 Instead, the error code gets added **only** to the extensions collection, but not as a stand-alone error code.
 
